@@ -21,35 +21,6 @@
 		<mockito.version>1.10.19</mockito.version>
 		<sepsa-api.version>1.2.13</sepsa-api.version>
 	</properties>
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<url>http://192.168.0.137:8081/nexus/content/repositories/releases/</url>
-			<releases>
-			  <enabled>true</enabled>
-			</releases>
-			<snapshots>
-			  <enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</distributionManagement>
-
-	<repositories>
-		<repository>    
-            <id>nexus</id>    
-            <name>Nexus Repository</name>    
-            <url>http://192.168.0.137:8081/nexus/content/groups/public/</url>    
-            <layout>default</layout>    
-            <releases>    
-                <enabled>true</enabled>    
-                <updatePolicy>never</updatePolicy>    
-            </releases>    
-            <snapshots>    
-                <enabled>true</enabled>    
-                <updatePolicy>never</updatePolicy>    
-            </snapshots>    
-        </repository>   	
-	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
