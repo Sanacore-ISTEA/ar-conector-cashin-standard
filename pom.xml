@@ -22,6 +22,36 @@
 		<sepsa-api.version>1.2.13</sepsa-api.version>
 	</properties>
 
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<url>http://192.168.0.137:8081/nexus/content/repositories/releases/</url>
+			<releases>
+			  <enabled>true</enabled>
+			</releases>
+			<snapshots>
+			  <enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>    
+            <id>nexus</id>    
+            <name>Nexus Repository</name>    
+            <url>http://192.168.0.137:8081/nexus/content/groups/public/</url>    
+            <layout>default</layout>    
+            <releases>    
+                <enabled>true</enabled>    
+                <updatePolicy>never</updatePolicy>    
+            </releases>    
+            <snapshots>    
+                <enabled>true</enabled>    
+                <updatePolicy>never</updatePolicy>    
+            </snapshots>    
+        </repository>   	
+	</repositories>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -105,7 +135,7 @@
 			</exclusions>
 		</dependency>
 
-		<dependency>
+		<!--dependency>
 			<groupId>sepsa</groupId>
 			<artifactId>sepsa-model</artifactId>
 			<version>${sepsa-api.version}</version>
@@ -119,7 +149,7 @@
 					<artifactId>sepsa-100billers-api</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
+		</dependency-->
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -292,7 +322,7 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 					<webResources>
 						<resource>
-							<directory>${project.basedir}/src/main/resources</directory>
+							<directory>${project.basedir}/Source/src/main/resources</directory>
 						</resource>
 					</webResources>
 				</configuration>
