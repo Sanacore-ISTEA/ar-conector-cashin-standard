@@ -6,7 +6,6 @@ pipeline {
         sh 'mvn test'
       }
     }
-
     stage('Publish to Nexus') {
       steps {
         script {
@@ -45,30 +44,24 @@ pipeline {
                 type: "pom"]
               ]
             );
-
           } else {
             error "*** File: ${artifactPath}, could not be found";
           }
         }
-
       }
     }
-
     stage('build') {
       steps {
         sh 'mvn package'
       }
     }
-
     stage('SonarQube Analysis') {
       steps {
         withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'token-sonarqube') {
-          sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=CON_billersplus-connector-core_AYDEZmMKLgNLztso_Anm'
+          sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=CON_ar-conector-cashin-standard_AYDJLY-vXbiIGfxO5b7I'
         }
-
       }
     }
-
   }
   environment {
     NEXUS_VERSION = 'nexus2'
