@@ -32,7 +32,7 @@ pipeline {
               repository: NEXUS_REPOSITORY,
               credentialsId: NEXUS_CREDENTIAL_ID,
               artifacts: [
-                // Artifact generated such as .jar, .ear and .war files.
+                // Artifact generate d such as .jar, .ear and .war files.
                 [artifactId: pom.artifactId,
                 classifier: '',
                 file: artifactPath,
