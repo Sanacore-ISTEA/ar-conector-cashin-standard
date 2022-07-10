@@ -271,6 +271,35 @@
 
 
 	</dependencies>
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<url>http://192.168.0.137:8081/nexus/content/repositories/releases/</url>
+			<releases>
+			  <enabled>true</enabled>
+			</releases>
+			<snapshots>
+			  <enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>    
+            <id>nexus</id>    
+            <name>Nexus Repository</name>    
+            <url>http://192.168.0.137:8081/nexus/content/groups/public/</url>    
+            <layout>default</layout>    
+            <releases>    
+                <enabled>true</enabled>    
+                <updatePolicy>never</updatePolicy>    
+            </releases>    
+            <snapshots>    
+                <enabled>true</enabled>    
+                <updatePolicy>never</updatePolicy>    
+            </snapshots>    
+        </repository>   	
+	</repositories>
 
 	<build>
 		<finalName>wu-connector-cashin-standard-${project.version}</finalName>
